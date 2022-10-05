@@ -66,7 +66,6 @@ public class TextAnalysis22 {
                 return true;
             }
         }
-
         return false;
     }
 
