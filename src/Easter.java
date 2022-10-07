@@ -14,7 +14,7 @@ public class Easter {
         int days = 22 + d + e - 7 * f;
         String goodFriday = min2Digits((days-2) >= 32 ? (days-2)%32+1 : (days-2)) + "." + min2Digits((days -2) / 32 + 3); // formats days from march 1 to good friday date
         String easterSunday = min2Digits(days >= 32 ? days%32+1 : days) + "." + min2Digits((days) / 32 + 3); // formats days from march 1 to easter sunday date
-        String easterMonday = min2Digits((days + 1) >= 32 ? (days+1)%32+1 : (days+1)) + "." + min2Digits((days +1) / 32 + 3); //
+        String easterMonday = min2Digits((days + 1) >= 32 ? (days+1)%32+1 : (days+1)) + "." + min2Digits((days +1) / 32 + 3); // formats days from march 1 to easter monday
         String dato = min4Digits(year) + " " + goodFriday + " " + easterSunday + " " + easterMonday; // formats dates to a readable String format
         // returns the formatted string for each date and year
         return dato;
