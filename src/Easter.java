@@ -12,9 +12,9 @@ public class Easter {
         int e = (2 * a + 4 * b + 6 * d + 5) % 7;
         int f = (c + 11 * d + 22 * e) / 451;
         int days = 22 + d + e - 7 * f;
-        String goodFriday = min2Digits((days-2) % 32 == 0? (days-2)%32+1 : (days-2)%32) + "." + min2Digits((days -2) / 32 + 3); // formats days from march 1 to good friday date
-        String easterSunday = min2Digits(days % 32 == 0? days%32+1 : days%32) + "." + min2Digits((days) / 32 + 3); // formats days from march 1 to easter sunday date
-        String easterMonday = min2Digits((days + 1) % 32 == 0? (days+1)%32+1 : (days+1)%32) + "." + min2Digits((days +1) / 32 + 3); //
+        String goodFriday = min2Digits((days-2) >= 32 ? (days-2)%32+1 : (days-2)) + "." + min2Digits((days -2) / 32 + 3); // formats days from march 1 to good friday date
+        String easterSunday = min2Digits(days >= 32 ? days%32+1 : days) + "." + min2Digits((days) / 32 + 3); // formats days from march 1 to easter sunday date
+        String easterMonday = min2Digits((days + 1) >= 32 ? (days+1)%32+1 : (days+1)) + "." + min2Digits((days +1) / 32 + 3); //
         String dato = min4Digits(year) + " " + goodFriday + " " + easterSunday + " " + easterMonday; // formats dates to a readable String format
         // returns the formatted string for each date and year
         return dato;
