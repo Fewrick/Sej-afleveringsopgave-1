@@ -13,12 +13,12 @@ public class Particles {
         Particles[] p = new Particles[3];
         for(int i = 0; i<p.length; i++) p[i] = new Particles(r.nextInt(n), r.nextInt(n)); //initialize all particles with random position
 
-        System.out.println("n="+n+" s="+s+" t="+t); //print starting conditions
+        System.out.println("n="+n+" s="+s+" t="+t); //starting conditions
 
-        for(int i = 1; i<=t; i++) { //t number of times
+        for(int i = 1; i<=t; i++) { 
             String out = "move " + i+ ", positions ";
             for(int j = 0; j<p.length; j++) {
-                p[j].move(r.nextInt(2*s+1)-s, r.nextInt(2*s+1)-s, n); //for all particles move a random amount between -s and s (inclusive) in x and y direction
+                p[j].move(r.nextInt(2*s+1)-s, r.nextInt(2*s+1)-s, n); //move a random amount between -s and s (inclusive) in x and y direction
                 out+="P"+(j+1)+"=["+p[j].x+";"+p[j].y+"] "; //Format positions in string
             }
             System.out.println(out.substring(0, out.length()-1));
