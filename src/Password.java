@@ -22,10 +22,10 @@ public class Password {
             boolean isNumber = isNumber(ascii);
 
             if(!isLetter && !isNumber) return false; //checks condtition 2
-            if(isLetter) countLetters++; //counts letters
-            if(isNumber) countNumbers++; //counts numbers
-            if(isUpper) countUpper++; //counts uppercase
-            if(isLower) countLower++; // count lowercase
+            if(isLetter) countLetters++; 
+            if(isNumber) countNumbers++; 
+            if(isUpper) countUpper++; 
+            if(isLower) countLower++; 
         }
         if(countLetters<2 || countNumbers<2 || countUpper<1 || countLower<1) return false; //checks conditions 2 through 6
 

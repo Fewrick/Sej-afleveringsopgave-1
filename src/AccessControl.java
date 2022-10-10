@@ -100,9 +100,5 @@ public class AccessControl {
                 options(in); //if input is not one of the options, then prompt user again
                 break;
         }
-        
-
     }
-
-    
 }
