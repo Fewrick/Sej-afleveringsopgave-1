@@ -32,7 +32,10 @@ public class TextAnalysis22 {
 
             // Hvis der er for mange ord i teksten, skal den stoppe med at læse videre.
             // Man kan stadig kalde metoderne på instancen men den vil bare ikke
-            // nødvendigvis give det svar man ønsker
+            // nødvendigvis give det svar man ønsker.
+
+            // Siden vi bruger en arrayList i stedet for en array[maxNoOfWords] er dette
+            // teknisk set overflødigt.
 
             if (words.size() > maxNoOfWords) {
                 break;
@@ -49,16 +52,6 @@ public class TextAnalysis22 {
     // praxis at håndterer fejlen, der hvor der en en metode der bliver kaldt med
     // dårlige argumenter. Da det ikke er mig som bestemmer hvad argumetnerne til
     // sourceFileName er, skal det heller ikke være mig som håndterer fejlen.
-
-    // Man kan i teorien godt wrappe Files.readString() i en try / catch, men så
-    // bliver man nødt til at kalde System.exit(), return null eller bare return en
-    // tom words array. Ingen af disse er gode løsninger da en programmør som kalder
-    // "new TextAnalysis(...)" ikke vil vide hvad der er gået galt når de ikke får
-    // de resultater som de forventer. En anden potential løsning til dette problem
-    // er at constructoren tager en String af teksten som skal analyseres, i stedet
-    // for stien af filen. Dette kan argumenters for at være en dårligere løsning da
-    // brugeren stadig bliver nødt til at bruge try / catch men at de også selv skal
-    // hånterer læsning af filen.
 
     public TextAnalysis22(String sourceFileName, int maxNoOfWords) throws IOException {
         File file = new File(sourceFileName);
