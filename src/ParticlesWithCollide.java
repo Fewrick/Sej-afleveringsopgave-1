@@ -1,10 +1,10 @@
 import java.util.*;
 
-public class ParticlesWillCollide {
+public class ParticlesWithCollide {
     public int x;
     public int y;
 
-    public ParticlesWillCollide(int x, int y) {
+    public ParticlesWithCollide(int x, int y) {
         this.x = x;
         this.y = y;
     }
