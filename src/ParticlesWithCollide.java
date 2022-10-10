@@ -34,13 +34,13 @@ public class ParticlesWithCollide {
 
             if ((p[0].x == p[1].x) && (p[0].y == p[1].y)) { // if statement that checks wether the position of p1 is equal to that of p2
                 System.out.println("particles collide");
-                for (int j = i + 1; j <= t; j++) {
+                for (int j = i + 1; j <= t; j++) { // Output is only the position of p1
                     out = "move " + j + ", positions ";
                     p[0].move(r.nextInt(2 * s + 1) - s, r.nextInt(2 * s + 1) - s, n);
                     out += "P" + 1 + "=[" + p[0].x + ";" + p[0].y + "] ";
                     System.out.println(out.substring(0, out.length() - 1));
                 }
-                break;
+                break; // breaks the "for i" loop
             }
         }
 
