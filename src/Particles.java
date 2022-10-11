@@ -28,14 +28,14 @@ public class Particles {
 
     public void move(int moveX, int moveY, int n) {
         //move x
-        this.x +=moveX;
+        x +=moveX;
         //fit within borders of grid
-        this.x = Math.max(0,this.x);
-        this.x = Math.min(n-1,this.x);
+        x = Math.max(0,x);
+        x = Math.min(n-1,x);
 
         //move y
-        this.y +=moveY;
-        this.y = Math.max(0,this.y);
-        this.y = Math.min(n-1,this.y);
+        y +=moveY;
+        y = Math.max(0,y);
+        y = Math.min(n-1,y);
     }
 }
