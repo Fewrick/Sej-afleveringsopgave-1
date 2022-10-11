@@ -7,9 +7,7 @@ public class Particles {
         this.x = x;
         this.y = y;
     }
-    public static void main(String[] args) {
-        runSimulation(23, 3, 100);
-    }
+
     public static void runSimulation(int n, int s, int t) {
         Random r = new Random();
         Particles[] p = new Particles[3];
