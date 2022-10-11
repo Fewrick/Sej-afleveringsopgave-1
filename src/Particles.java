@@ -7,7 +7,9 @@ public class Particles {
         this.x = x;
         this.y = y;
     }
-
+    public static void main(String[] args) {
+        runSimulation(23, 3, 100);
+    }
     public static void runSimulation(int n, int s, int t) {
         Random r = new Random();
         Particles[] p = new Particles[3];
@@ -21,20 +23,20 @@ public class Particles {
                 p[j].move(r.nextInt(2*s+1)-s, r.nextInt(2*s+1)-s, n); //move a random amount between -s and s (inclusive) in x and y direction
                 out+="P"+(j+1)+"=["+p[j].x+";"+p[j].y+"] "; //Format positions in string
             }
-            System.out.println(out.substring(0, out.length()-1));
+            System.out.println(out.substring(0, out.length()-1)); //remove space at final position
         } 
 
     }
 
-    public void move(int moveX, int moveY, int n) {
+    public void move(int dx, int dy, int n) {
         //move x
-        x +=moveX;
+        x +=dx;
         //fit within borders of grid
         x = Math.max(0,x);
         x = Math.min(n-1,x);
 
         //move y
-        y +=moveY;
+        y +=dy;
         y = Math.max(0,y);
         y = Math.min(n-1,y);
     }
