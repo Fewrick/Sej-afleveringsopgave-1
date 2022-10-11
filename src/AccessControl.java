@@ -47,9 +47,9 @@ public class AccessControl {
     }
 
     public static boolean validUsername (String username) { //checks if first character is letter and username does not contain blanks
+        if(username.isEmpty()) return false;
         char firstChar = username.charAt(0);
-        int ascii = (int)firstChar;
-        return Password.isLetter(ascii) && !containsBlank(username) && username.length()>0;
+        return Character.isLetter(firstChar) && !containsBlank(username);
     }
 
     public static boolean containsBlank (String s) { //simply checks if string contains a blank space character
