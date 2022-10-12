@@ -1,7 +1,6 @@
 import java.util.*;
 public class AccessControl {
-    static String username;
-    static String password;
+    private static String username, password;
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
 
@@ -14,12 +13,11 @@ public class AccessControl {
         in.close();
     }
 
-    public static String createUsername(Scanner in) { //checks if input is valid username and return if valid
+    private static String createUsername(Scanner in) { //checks if input is valid username and return if valid
         boolean validUsername = false;
         String username = ""; //local instance of username
 
         do {
-
             System.out.println("Please enter a non-empty username:");
             username = in.nextLine();
             validUsername = validUsername(username);
@@ -28,9 +26,8 @@ public class AccessControl {
         return username;
     }
 
-    public static String createPassword(Scanner in) {//check if password is valid using checkPWD function from 3a and return if valid
-        String password = "";
-        String passRepeat = "";
+    private static String createPassword(Scanner in) {//check if password is valid using checkPWD function from 3a and return if valid
+        String password = "", passRepeat = "";
         do {
         
             do {
@@ -46,20 +43,19 @@ public class AccessControl {
         return password;
     }
 
-    public static boolean validUsername (String username) { //checks if first character is letter and username does not contain blanks
+    private static boolean validUsername (String username) { //checks if first character is letter and username does not contain blanks
         if(username.isEmpty()) return false;
-        char firstChar = username.charAt(0);
-        return Character.isLetter(firstChar) && !containsBlank(username);
+        return Character.isLetter(username.charAt(0)) && !containsBlank(username);
     }
 
-    public static boolean containsBlank (String s) { //simply checks if string contains a blank space character
+    private static boolean containsBlank (String s) { //simply checks if string contains a blank space character
         for(char c : s.toCharArray()) {
             if(c == ' ') return true;
         }
         return false;
     }
 
-    public static void logon(Scanner in) { //The "logon" page. Check if input username is the current username and the same for password
+    private static void logon(Scanner in) { //The "logon" page. Check if input username is the current username and the same for password
         String tryUser = "";
         String tryPass = "";
         do {
@@ -76,7 +72,7 @@ public class AccessControl {
         options(in);
     }
 
-    public static void options(Scanner in) { //prompts the user with 3 choices and does accordingly
+    private static void options(Scanner in) { //prompts the user with 3 choices and does accordingly
         System.out.println("You now have the following choices:\n  1 - Change Password\n  2 - Log off\n  3 - Shut down");
         System.out.println("Please select:");
         String selection = in.nextLine();

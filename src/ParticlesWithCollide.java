@@ -9,10 +9,6 @@ public class ParticlesWithCollide {
         this.y = y;
     }
 
-    public static void main(String[] args) {
-    runSimulation(10, 3, 50);
-    }
-
     public static void runSimulation(int n, int s, int t) {
         Random r = new Random();
         Particles[] p = new Particles[2];

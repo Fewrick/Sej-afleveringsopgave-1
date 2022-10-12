@@ -1,7 +1,4 @@
 public class Easter {
-    public static void main(String[] args) {
-        System.out.println(computeEaster(2022));
-    }
 
     public static String computeEaster(int year) {
         // initialising all variables used for computing
